@@ -1,5 +1,5 @@
 <template>
-  <main class="d-flex flex-column ">
+  <section class="d-flex flex-column ">
     <div class="aboutProduct d-flex flex-row">
       <div class="tellBloc d-flex flex-column px-5">
         <h2 class="mb-2 mt-6 white">Общайтесь</h2>
@@ -14,7 +14,7 @@
     </div>
     <div class="tryChat">
       <h2 class="mb-3 white">Попробуйте!</h2>
-      <MessangeCard class="mb-5" v-for="(item, index) in listMessange" :answer=item.answer :bodyMessange=item.body
+      <MessageCard class="mb-5" v-for="(item, index) in listMessange" :answer=item.answer :bodyMessange=item.body
         :role=currentRole :name=name />
       <div class="action mt-5">
         <input class="messageInput" type="text" color=white name="textField" placeholder="Введите ваше сообщение">
@@ -32,11 +32,11 @@
         <h2 class="mb-2 mt-6 white">Понравилось? Присоединяйся!</h2>
         <hr>
         <div class="authAction d-flex flex-row mt-3">
-          <v-btn color="primary" v-bind="props" height="52px" width=40%>
+          <v-btn color="primary" height="52px" width=40%>
             Роль
           </v-btn>
           <p class="white mx-5">или</p>
-          <v-btn color="primary" v-bind="props" height="52px" width=40%>
+          <v-btn color="primary" height="52px" width=40%>
             Отправить
           </v-btn>
         </div>
@@ -48,17 +48,16 @@
         <p class="my-3">Возможности - GitHub</p>
       </div>
     </div>
-  </main>
+  </section>
 </template>
 <script>
-import AddRoleDialog from '../components/AddRoleDialog.vue'
-import MessangeCard from '../components/MessangeCard.vue'
+import MessageCard from '../components/MessageCard.vue'
 export default {
   components: {
-    AddRoleDialog,
-    MessangeCard,
+    MessageCard,
   },
   data: () => ({
+    dialog: false,
     name: 'Вася',
     currentRole: 'Программист',
     listMessange: [{ answer: true, body: 'Я Вася красавчик' }, { answer: false, body: 'Нет Вася ты дурак, разговариваешь сам с собой' },],
@@ -80,7 +79,6 @@ export default {
         return 'Название не должно быть пустым.'
       },
     ],
-    dialog: false,
   })
 }
 </script>

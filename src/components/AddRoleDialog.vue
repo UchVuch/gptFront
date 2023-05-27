@@ -3,14 +3,6 @@
       v-model="dialog"
       width="auto"
     >
-      <template v-slot:activator="{ props }">
-        <v-btn
-          color="primary"
-          v-bind="props"
-        >
-          Создать роль
-        </v-btn>
-      </template>
 
       <v-card>
         <div class="content">
@@ -23,15 +15,15 @@
         ></v-text-field>
         <h3>Содержание промта</h3>
         <v-text-field
-          v-model="promt"
+          v-model="prompt"
           :rules="promtRules"
           label="Название роли"
           required
         ></v-text-field>
         
         <v-card-actions>
-            <v-btn variant="outlined">Отмена</v-btn>
-            <v-btn variant="outlined">Создать</v-btn>
+            <v-btn variant="outlined" @click="hideDialog">Отмена</v-btn>
+            <v-btn variant="outlined" @click="hideDialog">Создать</v-btn>
         </v-card-actions>
         </div> 
       </v-card>
@@ -40,7 +32,10 @@
 
 <script>
 export default {
+  name: 'add-role-dialog',
   data: () => ({
+    dialog: false,
+    // двустороннее связывание с полями формы, правила валидации
     nameRole: '',
     nameRoleRules: [
       value => {
@@ -56,9 +51,14 @@ export default {
 
         return 'Содержание промта не должно быть пустым.'
       },
-    ],
-    dialog: false,
-  })
+    ],  
+  }),
+
+  methods: {
+    hideDialog() {
+      this.$emit('hide')
+    }
+  },
 }
 </script>
 
