@@ -14,7 +14,7 @@
     </div>
     <div class="tryChat">
       <h2 class="mb-3 white">Попробуйте!</h2>
-      <MessangeCard class="mb-5" v-for="(item, index) in listMessange" :answer=item.answer :bodyMessange=item.body
+      <MessageCard class="mb-5" v-for="(item, index) in listMessange" :answer=item.answer :bodyMessange=item.body
         :role=currentRole :name=name />
       <div class="action mt-5">
         <input class="messageInput" type="text" color=white name="textField" placeholder="Введите ваше сообщение">
@@ -51,14 +51,13 @@
   </section>
 </template>
 <script>
-import AddRoleDialog from '../components/AddRoleDialog.vue'
-import MessangeCard from '../components/MessangeCard.vue'
+import MessageCard from '../components/MessageCard.vue'
 export default {
   components: {
-    AddRoleDialog,
-    MessangeCard,
+    MessageCard,
   },
   data: () => ({
+    dialog: false,
     name: 'Вася',
     currentRole: 'Программист',
     listMessange: [{ answer: true, body: 'Я Вася красавчик' }, { answer: false, body: 'Нет Вася ты дурак, разговариваешь сам с собой' },],
@@ -80,7 +79,6 @@ export default {
         return 'Название не должно быть пустым.'
       },
     ],
-    dialog: false,
   })
 }
 </script>

@@ -9,7 +9,8 @@
         <router-link class="mr-3" to="/">Возможности</router-link>
         <hr class="mr-3" style="height: 32px; border: none; border-right: 1px solid#D1C4E9;">
         <router-link class="mr-3" to="/auth">Авторизация</router-link>
-        <router-link to="/register">Регистрация</router-link>
+        <router-link class="mr-3" to="/register">Регистрация</router-link>
+        <router-link to="/profile">Профиль</router-link>
     </nav>
     </header>
     <main>
@@ -27,13 +28,9 @@ export default {
 }
 </script>
 <style scoped>
-  main{    
+  main{
     width: 100%;
     flex: 1 0 auto;
-  }
-  header{
-    display: flex;
-    justify-content: end;
   }
   .gradient{
     font-family: 'Manrope';
