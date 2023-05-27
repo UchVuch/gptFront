@@ -1,5 +1,5 @@
 <template>
-  <v-app class="d-flex flex-column">
+  <v-app class="d-flex flex-column h-100">
     <header class="d-flex flex-row justify-space-between align-center py-2">
       <div class="naming d-flex flex-row align-center">
         <img class="mr-2" src="./assets/Logo.svg" alt="(-:-)">
@@ -32,7 +32,6 @@ export default {
     width: 100%;
     flex: 1 0 auto;
   }
-
   .gradient{
     font-family: 'Manrope';
     font-style: normal;

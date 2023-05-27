@@ -1,12 +1,18 @@
 <template>
-    <main class="d-flex flex-row">
-        <v-icon class="iconAvatar">mdi-account</v-icon>
-        <div class="message rounded-lg flex-column pa-5">
-            <p v-if="answer" class="d-flex justify-start">{{ role }}</p>
-            <p v-else class="d-flex justify-start">{{ name }}</p>
+    <section v-if="answer" class="d-flex flex-row">
+        <v-icon class="iconAvatarAnswer">mdi-account</v-icon>
+        <div class="answer rounded-lg flex-column pa-5">
+            <p class="d-flex justify-start">{{ role }}</p>
             <h4 class="d-flex justify-start">{{ bodyMessange }}</h4>
         </div>
-    </main>
+    </section>
+    <section v-else class="d-flex flex-row">
+        <v-icon class="iconAvatarQuestion">mdi-account</v-icon>
+        <div class="question rounded-lg flex-column pa-5">
+            <p class="d-flex justify-start">{{ name }}</p>
+            <h4 class="d-flex justify-start">{{ bodyMessange }}</h4>
+        </div>
+    </section>
 </template>
 
 <script>
@@ -33,20 +39,48 @@
 main{
     display: flex;
 }
-.message{
+
+.answer{
     width: 100%;
     display: flex;
-    background: white;
+    background: rgba(209, 196, 233, 1);
 }
-.iconAvatar{
+.question{
+    width: 100%;
+    display: flex;
+    background: rgba(237, 231, 246, 1);
+}
+.iconAvatarAnswer{
     width: 52px;
     height: 48px;
-    background-color: pink;
+    background-color: rgba(25, 118, 210, 1);
+    color: white;
+    border-radius: 90px;
+    margin-right: 10px;
+}
+.iconAvatarQuestion{
+    width: 52px;
+    height: 48px;
+    background-color: rgba(130, 177, 255, 1);
     color: white;
     border-radius: 90px;
     margin-right: 10px;
 }
 .answer{
     color: #000;
+}
+p{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.1px;
+    color: rgba(0, 0, 0, 0.6);
+}
+h4{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.1px;
+    color: rgba(0, 0, 0, 0.87);
 }
 </style>

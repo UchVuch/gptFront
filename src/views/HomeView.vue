@@ -18,10 +18,10 @@
         :role=currentRole :name=name />
       <div class="action mt-5">
         <input class="messageInput" type="text" color=white name="textField" placeholder="Введите ваше сообщение">
-        <v-btn color="primary" v-bind="props" class="mx-5" height="40px">
+        <v-btn color="rgba(69, 39, 160, 1)"  class="mx-5" height="40px" style="color: white">
           Роль
         </v-btn>
-        <v-btn color="primary" v-bind="props" height="40px">
+        <v-btn color="rgba(69, 39, 160, 1)"  height="40px" style="color: white">
           Отправить
         </v-btn>
       </div>
@@ -32,20 +32,20 @@
         <h2 class="mb-2 mt-6 white">Понравилось? Присоединяйся!</h2>
         <hr>
         <div class="authAction d-flex flex-row mt-3">
-          <v-btn color="primary" height="52px" width=40%>
-            Роль
+          <v-btn color="rgba(69, 39, 160, 1)" height="52px" width=40% style="color: white">
+              Зарегистрироваться
           </v-btn>
           <p class="white mx-5">или</p>
-          <v-btn color="primary" height="52px" width=40%>
-            Отправить
+          <v-btn color="rgba(69, 39, 160, 1)" height="52px" width=40% style="color: white">
+            Войти
           </v-btn>
         </div>
       </div>
       <div class="copyrightBloc d-flex flex-column px-10">
-        <h2 class="mb-1 mt-6">Авторы проекта</h2>
-        <p class="mb-2">Команда notFive (C) 2023</p>
+        <h2 class="mb-3 mt-10 colorfulH2">Про нас</h2>
         <hr>
-        <p class="my-3">Возможности - GitHub</p>
+        <p class="mt-4 colorfulP">Команда notFive (C) 2023</p>
+        <p class="my-2 colorfulP">Возможности - GitHub</p>
       </div>
     </div>
   </section>
@@ -84,11 +84,30 @@ export default {
 </script>
 
 <style scoped>
+hr{
+  background-color: rgba(209, 196, 233, 0.5);
+}
 .white {
-  color: white;
+  color: rgba(255, 255, 255, 1);
+}
+.colorfulH2{
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  color: #7E57C2;
+}
+.colorfulP{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  color: #7E57C2;
 }
 .messageInput {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 1);
   width: 100%;
   padding-left: 1%;
   border-radius: 4px;
@@ -99,7 +118,7 @@ export default {
   padding-left: 58px;
 }
 .tryChat{
-  background: #5E35B1;
+  background: #7E57C2;
   padding-top: 2%;
   padding-bottom: 2%;
   padding-right: 15%;
@@ -112,7 +131,7 @@ export default {
 }
 .tellBloc, .createBloc, .inviteBloc{
   width: 100%;
-  background: #5E35B1;
+  background:#7E57C2;
   border-radius: 4px;
 }
 .tellBloc, .inviteBloc {
@@ -130,5 +149,6 @@ export default {
   align-items: center;
   height: 52px;
   width: 100%;
+  justify-content: center;
 }
 </style>
