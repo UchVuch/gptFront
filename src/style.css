@@ -37,7 +37,7 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 h1 {
@@ -75,6 +75,7 @@ button:focus-visible {
   padding-right: 5%;
   padding-left: 5%;
   text-align: center;
+  background-color: white;
 }
 
 @media (prefers-color-scheme: light) {

@@ -1,5 +1,5 @@
 <template>
-  <v-app class="d-flex flex-column">
+  <v-app class="d-flex flex-column h-100">
     <header class="d-flex flex-row justify-space-between align-center py-2">
       <div class="naming d-flex flex-row align-center">
         <img class="mr-2" src="./assets/Logo.svg" alt="(-:-)">
@@ -27,11 +27,9 @@ export default {
 }
 </script>
 <style scoped>
-  main{
-    display: flex;
-    flex-direction: column;
+  main{    
     width: 100%;
-    flex: 1 0;
+    flex: 1 0 auto;
   }
   header{
     display: flex;
