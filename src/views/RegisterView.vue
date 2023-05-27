@@ -1,8 +1,11 @@
 <template>
-    <v-sheet width="300" class="mx-auto">
+  <section class="registForm">
+    <v-sheet class="aling-center content pa-10">
       <v-form ref="form">
+        <h2>Регистрация</h2>
         <v-text-field
           v-model="username"
+          class="nickName"
           :counter="30"
           :rules="nameRules"
           label="Введите никнейм"
@@ -10,6 +13,7 @@
         ></v-text-field>
         <v-text-field
           v-model="email"
+          class="email"
           :rules="emailRules"
           label="Введите почту"
           type="email"
@@ -17,6 +21,7 @@
         ></v-text-field>
         <v-text-field
           v-model="password"
+          class="password"
           type="password"
           :rules="passwordRules"
           label="Введите пароль"
@@ -25,7 +30,8 @@
   
         <div class="d-flex flex-column">
           <v-btn
-            color="primary"
+            color="rgba(69, 39, 160, 1)"
+            style="color: white"
             class="mt-4"
             block
             @click="validate"
@@ -35,6 +41,7 @@
         </div>
       </v-form>
     </v-sheet>
+  </section>
   </template>
   
   <script>
@@ -78,6 +85,28 @@
   </script>
   
   <style scoped>
-  
+  .registForm {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 10%;
+  }
+  .content{
+    width: 50%;
+    background: #7E57C2;
+    margin: 0 auto;
+  }
+  h2{
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 1);
+  margin-bottom: 20px;
+  }
+  .nickName, .password, .email{
+    color: rgba(255, 255, 255, 1);
+  } 
   </style>
   
