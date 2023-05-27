@@ -70,6 +70,7 @@
       <div class="profile__content">
         <v-btn
           color="primary"
+          width="100%"
           @click="addRole = true"
         >
           Сохранить
