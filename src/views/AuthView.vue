@@ -19,10 +19,7 @@
         label="Введите пароль"
         required
       ></v-text-field>
-
-
-      <div class="d-flex flex-column">
-        <v-btn
+      <v-btn
           color="rgba(69, 39, 160, 1)"
           style="color: white"
           class="mt-4"
@@ -33,7 +30,6 @@
         >
           Войти
         </v-btn>
-      </div>
     </v-form>
   </v-sheet>
   </section>

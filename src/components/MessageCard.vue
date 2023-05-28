@@ -1,5 +1,5 @@
 <template>
-    <section class="d-flex flex-row">
+    <div class="d-flex flex-row">
         <v-icon v-if="answer" class="iconAnswer">mdi-account</v-icon>
         <v-icon v-else class="iconQuestion">mdi-account</v-icon>
         <div v-if="answer" class="answer rounded-lg flex-column pa-5">
@@ -10,7 +10,7 @@
             <p class="d-flex justify-start">{{ name }}</p>
             <h4 class="d-flex justify-start">{{ bodyMessange }}</h4>
         </div>
-    </section>
+    </div>
 </template>
 
 <script>
@@ -34,9 +34,6 @@
 </script>
 
 <style scoped>
-section{
-    display: flex;
-}
 .answer{
     width: 100%;
     display: flex;

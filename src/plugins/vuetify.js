@@ -13,7 +13,7 @@ const vuetify = createVuetify({
     themes: {
       light: {
         colors: {
-          primary: '#304FFE',
+          primary: '#4527A0',
         }
       },
     },

@@ -40,6 +40,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100dvh;
+  background-color: #EDE7F6;
 }
 
 h1 {
@@ -69,15 +70,16 @@ button:focus-visible {
 .card {
   padding: 2em;
 }
-
+.container{
+  max-width: 1600px;
+}
 #app {
   
   width: 100%;
   margin: 0 auto;
-  padding-right: 5%;
-  padding-left: 5%;
   text-align: center;
-  background-color: white;
+  height: 100vh;
+  background-color: #EDE7F6;
 }
 
 @media (prefers-color-scheme: light) {

@@ -1,6 +1,5 @@
 <template>
-  <AuthChat v-if="isAuth"></AuthChat>
-  <section v-else class="d-flex flex-column">
+  <section class="d-flex flex-column">
     <div class="aboutProduct d-flex flex-row">
       <div class="tellBloc d-flex flex-column px-5">
         <h2 class="mb-2 mt-6 white">Общайтесь</h2>
@@ -55,11 +54,8 @@
   </section>
 </template>
 <script>
-import { mapState } from 'pinia'
-import { useAuthStore } from '../plugins/store/auth'
-import AuthChat from '../components/AuthChat.vue'
 import MessageCard from '../components/MessageCard.vue'
-export default {
+
   components: {
     MessageCard,
     AuthChat
@@ -204,3 +200,4 @@ hr{
   flex: 1 0;
 }
 </style>
+</script>
