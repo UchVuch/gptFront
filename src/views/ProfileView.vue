@@ -95,9 +95,28 @@
             искать роли
           </v-tab>
         </v-tabs>
-
         <v-window v-model="currentTab">
           <v-window-item value="1">
+            <div class="role__controls">
+              <v-btn color="rgba(69, 39, 160, 1)" style="color: white" height="56">От А до Я</v-btn>
+              <v-btn color="rgba(69, 39, 160, 1)" style="color: white" height="56">От Я до А</v-btn>
+              <v-text-field
+                v-model="searchRolesNames"
+                loading
+                placeholder="Поиск.."
+                hide-details="auto"
+              >
+                <template v-slot:loader>
+                  <v-progress-linear
+                    :active="loadingRoles"
+                    color="primary"
+                    absolute
+                    height="3"
+                    indeterminate
+                  ></v-progress-linear>
+                </template>
+              </v-text-field>
+            </div>
             <ul class="role__list">
               <template v-for="role in roleList">
                 <li class="role__item">

@@ -83,27 +83,27 @@ export default {
 
   methods: {
     async sendUserMessage() {
-      console.log(true)
-      try {
-          console.log(JSON.stringify({
-            role:'user', 
-            login: 'login', 
-            prompt: `${this.messange}`
-          }))
-        const req = await fetch('http://192.168.100.166/chat', {
-          method: 'POST',
-          body: JSON.stringify({
-            role:'user', 
-            login: 'login', 
-            prompt: `${this.messange}`
-          })
-        })
+    //   console.log(true)
+    //   try {
+    //       console.log(JSON.stringify({
+    //         role:'user', 
+    //         login: 'login', 
+    //         prompt: `${this.messange}`
+    //       }))
+    //     const req = await fetch('http://192.168.100.166/chat', {
+    //       method: 'POST',
+    //       body: JSON.stringify({
+    //         role:'user', 
+    //         login: 'login', 
+    //         prompt: `${this.messange}`
+    //       })
+    //     })
         
-        const data = await req.json()
-        // console.log(data.message)
-      } catch (err) {
-        console.log(err)
-      }    
+    //     const data = await req.json()
+    //     console.log(data.message)
+    //   } catch (err) {
+    //     console.log(err)
+    //   }    
     },
   }
 }
