@@ -14,7 +14,6 @@
       <hr>
       <MessageCard class="my-5" v-for="(item, index) in listMessange" :answer=item.answer :bodyMessange=item.body
         :role=currentRole :name=name />
-      
     </div>
   </section>
 </template>

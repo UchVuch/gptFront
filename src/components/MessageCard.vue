@@ -40,21 +40,21 @@ section{
 .answer{
     width: 100%;
     display: flex;
-    background: white;
-    color: #000;
+    background: #D1C4E9;
+    
 }
 main{
     display: flex;
 }
-.message{
+.question{
     width: 100%;
     display: flex;
-    background: white;
+    background: #EDE7F6;    
 }
-.iconAvatar{
+.iconAnswer{
     width: 52px;
     height: 48px;
-    background-color: pink;
+    background-color: #1976D2;
     color: white;
     border-radius: 90px;
     margin-right: 10px;
@@ -62,7 +62,7 @@ main{
 .iconQuestion{
     width: 52px;
     height: 48px;
-    background-color: pink;
+    background-color: #82B1FF;
     color: white;
     border-radius: 90px;
     margin-right: 10px;

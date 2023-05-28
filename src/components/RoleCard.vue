@@ -2,7 +2,7 @@
     <section class="roleCard">
         <div class="baseInfo">
             <v-icon class="iconRole">mdi-account</v-icon>
-            <div class="titleRole"></div>
+            <div class="titleRole">{{ title }}</div>
         </div>
 
     </section>
@@ -12,7 +12,7 @@
     export default {
         props: {
         dialog: {
-            type: Map[String],
+            type: Array,
         },
         title: {
             type: String,
@@ -38,5 +38,10 @@
         color: white;
         border-radius: 90px;
         margin-right: 10px;
+    }
+    .titleRole{
+        display: flex;
+        color: white;
+        width: ;
     }
 </style>
