@@ -14,14 +14,14 @@
     </div>
     <div class="tryChat">
       <h2 class="mb-3 white">Попробуйте!</h2>
-      <MessangeCard class="mb-5" v-for="(item, index) in listMessange" :answer=item.answer :bodyMessange=item.body
+      <MessageCard class="mb-5" v-for="(item, index) in listMessange" :answer=item.answer :bodyMessange=item.body
         :role=currentRole :name=name />
       <div class="action mt-5">
-        <input class="messageInput" type="text" color=white name="textField" placeholder="Введите ваше сообщение">
+        <input v-model="messange" class="messageInput" type="text" color=white name="textField" placeholder="Введите ваше сообщение">
         <v-btn color="rgba(69, 39, 160, 1)"  class="mx-5" height="40px" style="color: white">
           Роль
         </v-btn>
-        <v-btn color="rgba(69, 39, 160, 1)"  height="40px" style="color: white">
+        <v-btn color="rgba(69, 39, 160, 1)"  height="40px" style="color: white" @click="sendUserMessage">
           Отправить
         </v-btn>
       </div>
@@ -51,14 +51,13 @@
   </section>
 </template>
 <script>
-import AddRoleDialog from '../components/AddRoleDialog.vue'
-import MessangeCard from '../components/MessangeCard.vue'
+import MessageCard from '../components/MessageCard.vue'
 export default {
   components: {
-    AddRoleDialog,
-    MessangeCard,
+    MessageCard,
   },
   data: () => ({
+    dialog: false,
     name: 'Вася',
     currentRole: 'Программист',
     listMessange: [{ answer: true, body: 'Я Вася красавчик' }, { answer: false, body: 'Нет Вася ты дурак, разговариваешь сам с собой' },],
@@ -80,8 +79,41 @@ export default {
         return 'Название не должно быть пустым.'
       },
     ],
-    dialog: false,
-  })
+  }),
+
+  methods: {
+    async sendUserMessage() {
+      console.log(true)
+      try {
+        console.log({
+            role:'user', 
+            login: 'login', 
+            prompt: `${this.messange}`
+          })
+          console.log(JSON.stringify({
+            role:'user', 
+            login: 'login', 
+            prompt: `${this.messange}`
+          }))
+        const req = await fetch('http://192.168.100.166/chat', {
+          method: 'POST',
+          body: JSON.stringify({
+            role:'user', 
+            login: 'login', 
+            prompt: `${this.messange}`
+          })
+        })
+        
+        const data = await req.json()
+
+        // const req = await fetch('http://192.168.100.166/chat/test')
+        // const data = await req.json()
+        // console.log(data.message)
+      } catch (err) {
+        console.log(err)
+      }    
+    },
+  }
 }
 </script>
 
