@@ -85,11 +85,6 @@ export default {
     async sendUserMessage() {
       console.log(true)
       try {
-        console.log({
-            role:'user', 
-            login: 'login', 
-            prompt: `${this.messange}`
-          })
           console.log(JSON.stringify({
             role:'user', 
             login: 'login', 
@@ -105,9 +100,6 @@ export default {
         })
         
         const data = await req.json()
-
-        // const req = await fetch('http://192.168.100.166/chat/test')
-        // const data = await req.json()
         // console.log(data.message)
       } catch (err) {
         console.log(err)

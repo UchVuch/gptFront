@@ -41,13 +41,17 @@ section{
     width: 100%;
     display: flex;
     background: white;
+    color: #000;
 }
-.question{
+main{
+    display: flex;
+}
+.message{
     width: 100%;
     display: flex;
     background: white;
 }
-.iconAnswer{
+.iconAvatar{
     width: 52px;
     height: 48px;
     background-color: pink;

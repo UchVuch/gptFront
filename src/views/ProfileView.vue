@@ -172,7 +172,7 @@ import AddRoleDialog from '../components/AddRoleDialog.vue'
 export default {
   components: {AddRoleDialog},
   mounted() {
-    this.getUserInfo()
+    // this.getUserInfo()
   },
 
   data: () => ({
