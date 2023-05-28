@@ -1,33 +1,22 @@
 <template>
-    <v-dialog
-      v-model="dialog"
-      width="auto"
-    >
+  <v-dialog v-model="dialog" width="auto">
+    <v-card>
+      <div class="content">
+        <h3>Создание роли</h3>
+        <v-text-field v-model="nameRole" :rules="nameRoleRules" label="Название роли" required></v-text-field>
+        <v-text-field v-model="description" :rules="descriptionRules" label="Введите описание роли"
+          required></v-text-field>
+        <v-text-field v-model="prompt" :rules="promtRules" label="Введите промт" required></v-text-field>
 
-      <v-card>
-        <div class="content">
-            <h3>Название роли</h3>
-        <v-text-field
-          v-model="nameRole"
-          :rules="nameRoleRules"
-          label="Название роли"
-          required
-        ></v-text-field>
-        <h3>Содержание промта</h3>
-        <v-text-field
-          v-model="prompt"
-          :rules="promtRules"
-          label="Название роли"
-          required
-        ></v-text-field>
-        
-        <v-card-actions>
-            <v-btn variant="outlined" @click="hideDialog">Отмена</v-btn>
-            <v-btn variant="outlined" @click="hideDialog">Создать</v-btn>
+        <v-card-actions class="d-flex align-center">
+          <v-btn color="rgba(69, 39, 160, 1)" variant="tonal"
+           style="color: white" @click="hideDialog" class="mr-1">Отмена</v-btn>
+          <v-btn color="rgba(69, 39, 160, 1)" variant="tonal"
+           style="color: white" @click="hideDialog" class="ml-1">Создать</v-btn>
         </v-card-actions>
-        </div> 
-      </v-card>
-    </v-dialog>
+      </div>
+    </v-card>
+  </v-dialog>
 </template>
 
 <script>
@@ -42,6 +31,14 @@ export default {
         if (value) return true
 
         return 'Название не должно быть пустым.'
+      },
+    ],
+    description: '',
+    descriptionRules: [
+      value => {
+        if (value) return true
+
+        return 'Описание роли не должно быть пустым.'
       },
     ],
     prompt: '',
@@ -63,7 +60,16 @@ export default {
 </script>
 
 <style scoped>
-    .content{
-        padding: 20px;
-    }
+.content {
+  background: #7E57C2;
+  padding: 20px;
+}
+
+h3 {
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 24px;
+}
 </style>

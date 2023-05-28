@@ -17,11 +17,11 @@
       <MessageCard class="mb-5" v-for="(item, index) in listMessange" :answer=item.answer :bodyMessange=item.body
         :role=currentRole :name=name />
       <div class="action mt-5">
-        <input class="messageInput" type="text" color=white name="textField" placeholder="Введите ваше сообщение">
+        <input v-model="messange" class="messageInput" type="text" color=white name="textField" placeholder="Введите ваше сообщение">
         <v-btn color="rgba(69, 39, 160, 1)"  class="mx-5" height="40px" style="color: white">
           Роль
         </v-btn>
-        <v-btn color="rgba(69, 39, 160, 1)"  height="40px" style="color: white">
+        <v-btn color="rgba(69, 39, 160, 1)"  height="40px" style="color: white" @click="sendUserMessage">
           Отправить
         </v-btn>
       </div>
@@ -79,7 +79,33 @@ export default {
         return 'Название не должно быть пустым.'
       },
     ],
-  })
+  }),
+
+  methods: {
+    async sendUserMessage() {
+      console.log(true)
+      try {
+          console.log(JSON.stringify({
+            role:'user', 
+            login: 'login', 
+            prompt: `${this.messange}`
+          }))
+        const req = await fetch('http://192.168.100.166/chat', {
+          method: 'POST',
+          body: JSON.stringify({
+            role:'user', 
+            login: 'login', 
+            prompt: `${this.messange}`
+          })
+        })
+        
+        const data = await req.json()
+        // console.log(data.message)
+      } catch (err) {
+        console.log(err)
+      }    
+    },
+  }
 }
 </script>
 

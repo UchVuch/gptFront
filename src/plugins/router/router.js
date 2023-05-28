@@ -21,6 +21,16 @@ const routes = [
     name: 'profile',
     component: () => import('@/views/ProfileView.vue')
   },
+  {
+    path: '/possibility',
+    name: 'possibility',
+    component: () => import('@/views/PossibilityView.vue')
+  },
+  {
+    path: '/chat',
+    name: 'chat',
+    component: () => import('@/views/ChatView.vue')
+  },
 ]
 
 const router = createRouter({

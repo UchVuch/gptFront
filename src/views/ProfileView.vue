@@ -1,6 +1,17 @@
 <template>
   <section class="profile">
     <div class="profile__left">
+      <v-btn
+          width="100%"
+          height="57px"
+          color="rgba(69, 39, 160, 1)"
+          style="color: white"
+          class="mb-2"
+          @click="addRole = true"
+        >
+          Создать роли
+        </v-btn>
+        <add-role-dialog width="30%" v-model="addRole" @hide="addRole = false"></add-role-dialog>
       <div class="user-card">
         <div class="user-card__left">
           <img  class="user-card__image" src="@/assets/user-avatar.png" width="48" height="48" alt="Ваше фото">
@@ -44,7 +55,8 @@
           </ul>
           <v-btn 
             v-if="!editUser"
-            color="primary" 
+            color="rgba(69, 39, 160, 1)"
+            style="color: white"
             width="100%" 
             @click="editUser = true"
           >
@@ -59,7 +71,8 @@
           </v-btn>
           <v-btn 
             v-if="editUser" 
-            color="primary"
+            color="rgba(69, 39, 160, 1)"
+            style="color: white"
           >
             Сохранить
           </v-btn>
@@ -68,14 +81,6 @@
     </div>
     <div class="profile__right">
       <div class="profile__content">
-        <v-btn
-          color="primary"
-          width="100%"
-          @click="addRole = true"
-        >
-          Сохранить
-        </v-btn>
-        <add-role-dialog v-model="addRole" @hide="addRole = false"></add-role-dialog>
         <v-tabs
           v-model="currentTab"
           fixed-tabs
@@ -108,8 +113,7 @@
                     </v-card-title>
                     <v-card-text>Greyhound divisively hello coldly wonderfully marginally far upon excluding.</v-card-text>
                     <v-card-actions>
-                      <v-btn color="primary" width="48%">Убрать</v-btn>
-                      <v-btn color="primary" width="48%">Выбрать</v-btn>
+                      <v-btn color="primary"  class="d-flex align-center">Перейти в диалог</v-btn>
                     </v-card-actions>
                   </v-card>
                 </li>
@@ -118,8 +122,8 @@
           </v-window-item>
           <v-window-item value="2">
             <div class="role__controls">
-              <v-btn color="primary" height="56">От А до Я</v-btn>
-              <v-btn color="primary" height="56">От Я до А</v-btn>
+              <v-btn color="rgba(69, 39, 160, 1)" style="color: white" height="56">От А до Я</v-btn>
+              <v-btn color="rgba(69, 39, 160, 1)" style="color: white" height="56">От Я до А</v-btn>
               <v-text-field
                 v-model="searchRolesNames"
                 loading
